@@ -1,12 +1,12 @@
 all: build run
 
 build:
-	go build -o bin/propcalc cmd/main.go
+	go build -o bin/thrivepropcalc cmd/main.go
 
 run:
-	./bin/propcalc
+	./bin/thrivepropcalc
 
 clean:
-	rm -rf bin/propcalc
+	rm -rf bin/thrivepropcalc
 
 .PHONY: all build run clean
