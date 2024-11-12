@@ -1,3 +1,27 @@
+commit 432abd8d8309e3665096cd61ac79ba339174f08d
+Author: Marcel Joshua <marceljoshua69@gmail.com>
+Date:   Tue Nov 12 19:15:49 2024 +0700
+
+    add a little test
+
+commit c46c39eb0afd85df821b8a67091b80ebb4fddfc8
+Author: Marcel Joshua <marceljoshua69@gmail.com>
+Date:   Tue Nov 12 18:57:04 2024 +0700
+
+    refactor -> use map key to validate property type
+
+commit 5e15a366ddd0f9c7c43b08c1ff98320225c78d09
+Author: Marcel Joshua <marceljoshua69@gmail.com>
+Date:   Tue Nov 12 18:39:54 2024 +0700
+
+    update dockerfile
+
+commit 7c1b2fa6ef69130a1ca833bda998d26f8ce33de5
+Author: Marcel Joshua <marceljoshua69@gmail.com>
+Date:   Tue Nov 12 18:35:04 2024 +0700
+
+    add git log file
+
 commit 8e08a1700bc52307ec7b3c921adafc393220fa72
 Author: Marcel Joshua <marceljoshua69@gmail.com>
 Date:   Tue Nov 12 18:34:07 2024 +0700
