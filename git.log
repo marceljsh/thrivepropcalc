@@ -1,0 +1,149 @@
+commit 8e08a1700bc52307ec7b3c921adafc393220fa72
+Author: Marcel Joshua <marceljoshua69@gmail.com>
+Date:   Tue Nov 12 18:34:07 2024 +0700
+
+    refactor -> use new constants for rates
+
+commit 11ae58f601f5faf29ca608f1e2d388e7b5022891
+Author: Marcel Joshua <marceljoshua69@gmail.com>
+Date:   Tue Nov 12 18:33:35 2024 +0700
+
+    refactor -> use new constants and reformat equations
+
+commit e5f85339d7025467c59f279b440232f5a8567b82
+Author: Marcel Joshua <marceljoshua69@gmail.com>
+Date:   Tue Nov 12 18:32:57 2024 +0700
+
+    refactor -> convert some constants into maps
+
+commit ff57766af06e0f1f3778cdcd48a47c0b48601fe4
+Author: Marcel Joshua <marceljoshua69@gmail.com>
+Date:   Tue Nov 12 18:24:00 2024 +0700
+
+    add corner assumption in README
+
+commit 136aba0a7db335041f460953f4ae54d51cced537
+Author: Marcel Joshua <marceljoshua69@gmail.com>
+Date:   Tue Nov 12 18:19:31 2024 +0700
+
+    refactor -> use new constants
+
+commit 0ec1ac28a692756f88d5927a543c6c78b2b034d5
+Author: Marcel Joshua <marceljoshua69@gmail.com>
+Date:   Tue Nov 12 18:16:56 2024 +0700
+
+    add equation explanation in README
+
+commit f81649313cbf83cb59ccc60195e25e1d5568df8b
+Author: Marcel Joshua <marceljoshua69@gmail.com>
+Date:   Tue Nov 12 18:07:58 2024 +0700
+
+    refactor some constants into maps
+
+commit 3ff9685c61b58b0b7d791b5cc443d2269e3e3db3
+Author: Marcel Joshua <marceljoshua69@gmail.com>
+Date:   Tue Nov 12 17:53:53 2024 +0700
+
+    refactor -> use constants for bonuses
+
+commit d2cdebf94c08fa045ed2a02c3f00850d86873e25
+Author: Marcel Joshua <marceljoshua69@gmail.com>
+Date:   Tue Nov 12 17:52:18 2024 +0700
+
+    refactor -> move validateInput function to usecase
+
+commit 1ac42771c782c06b5ab1e7de4579066373b4ce7b
+Author: Marcel Joshua <marceljoshua69@gmail.com>
+Date:   Tue Nov 12 17:51:18 2024 +0700
+
+    refactor -> move displayResults function to usecase
+
+commit ed8907bdd3739b6f0bab9b941a62e3368945872c
+Author: Marcel Joshua <marceljoshua69@gmail.com>
+Date:   Tue Nov 12 17:49:56 2024 +0700
+
+    refactor -> move ProcessRecords function to usecase
+
+commit a0f2c2787fcc382717e870455e5ad91f0495d7f6
+Author: Marcel Joshua <marceljoshua69@gmail.com>
+Date:   Tue Nov 12 17:47:45 2024 +0700
+
+    refactor currency format
+
+commit 9dbd21c117f0014049ed6567d9de471b6122cf54
+Author: Marcel Joshua <marceljoshua69@gmail.com>
+Date:   Tue Nov 12 17:43:16 2024 +0700
+
+    add number formatter function
+
+commit 794d14f79eef8da421567b983336eff5d81e2ad6
+Author: Marcel Joshua <marceljoshua69@gmail.com>
+Date:   Tue Nov 12 17:42:29 2024 +0700
+
+    add input.txt file as input container
+
+commit 5026a7eadaa4cc2f9b0ab64e40eee943289fc55c
+Author: Marcel Joshua <marceljoshua69@gmail.com>
+Date:   Tue Nov 12 17:41:58 2024 +0700
+
+    add program flow to main function
+
+commit 40921737574b85c20694389ca9448e557e3a42a2
+Author: Marcel Joshua <marceljoshua69@gmail.com>
+Date:   Tue Nov 12 17:34:04 2024 +0700
+
+    add parser functions
+
+commit dccbdae48898880e8a03a9a695fd9e361519de03
+Author: Marcel Joshua <marceljoshua69@gmail.com>
+Date:   Tue Nov 12 17:19:07 2024 +0700
+
+    add usecase to calculate properties value and maintenance fee
+
+commit a0dbaa763921b79570bf55a722d5a7f3916cee6b
+Author: Marcel Joshua <marceljoshua69@gmail.com>
+Date:   Tue Nov 12 17:08:00 2024 +0700
+
+    update README and its assets
+
+commit 5464aae6c06bc0c9125a3c48f5124de7636d313e
+Author: Marcel Joshua <marceljoshua69@gmail.com>
+Date:   Tue Nov 12 04:54:11 2024 +0700
+
+    add base for README
+
+commit 71888b0b782d1c8b0b861db1fabf031200244538
+Author: Marcel Joshua <marceljoshua69@gmail.com>
+Date:   Tue Nov 12 04:29:12 2024 +0700
+
+    add property method to calculate one's value
+
+commit c12ac3734b005ca119d21a929d46332f87827326
+Author: Marcel Joshua <marceljoshua69@gmail.com>
+Date:   Tue Nov 12 04:21:35 2024 +0700
+
+    add constant values
+
+commit 432333b63f7620538a9940fdc6a8eebf6675db63
+Author: Marcel Joshua <marceljoshua69@gmail.com>
+Date:   Tue Nov 12 04:16:51 2024 +0700
+
+    add property model
+
+commit c551830c7b9ea0398c21f6b0f73d98524fb2ce00
+Author: Marcel Joshua <marceljoshua69@gmail.com>
+Date:   Tue Nov 12 02:09:40 2024 +0700
+
+    modify build file and remove binary file
+
+commit 8e1c989fb61c5394bb9beada269728bd9bd32d9b
+Author: Marcel Joshua <marceljoshua69@gmail.com>
+Date:   Tue Nov 12 02:07:25 2024 +0700
+
+    add gitignore file
+
+commit 01f85399a66155768985a86e09daba63826f16cd
+Author: Marcel Joshua <marceljoshua69@gmail.com>
+Date:   Tue Nov 12 02:04:11 2024 +0700
+
+    test commit
