@@ -27,13 +27,7 @@ func (p *Property) CalculateValue(currentYear int) {
 
 	propertyValue := baseValue * landApprFactor * buildingDeprFactor
 
-	if p.Location == "PREMIUM" {
-		propertyValue *= 1 + premiumBonus
-	}
-
-	if p.Corner == "CORNER" || p.Corner == "YES" {
-		propertyValue *= 1 + cornerBonus
-	}
+	propertyValue = propertyValue * (1 + locationBonuses[p.Location]) * (1 + cornerBonuses[p.Corner])
 
 	p.Value = propertyValue
 
