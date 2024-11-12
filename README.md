@@ -25,7 +25,7 @@ First, we need to understand the rules.
 
 3. Location bonuses:
    - Premium location adds 20% to total value
-   - Corner lot adds 15% to total value
+   - Corner (YES/CORNER) lot adds 15% to total value
 
 5. Monthly maintenance calculation:
    - Residential base fee: Rp 2,500/m²
