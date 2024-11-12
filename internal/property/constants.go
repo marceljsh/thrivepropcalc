@@ -19,4 +19,7 @@ const (
 	commercialBaseFee  = 3_500
 	securityFee        = 1_000
 	cleaningFee        = 800
+
+	// layout
+	timestampLayout = "2006-01-02T15:04:05"
 )
