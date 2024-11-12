@@ -1,14 +1,16 @@
 # Thrive Property Calculator
 
-## 🚀 How to use
 
-1. Run `make build` to compile the application. It will result in binary file `bin/thrivepropcalc`.
+## `🚀 How to use`
+
+1. Run `make build` to compile the program. It will result in binary file `bin/thrivepropcalc`.
 2. Prepare the inputs in `input.txt`
-3. Run `make run` to run the binary file. You should provide an `input.txt`, otherwise the app won't run as intended.
+3. Run `make run` to run the binary file. You should provide an `input.txt`, otherwise the program won't run as intended.
 4. Run `make clean` to clean up the compiled file.
-5. Alternatively, you can build and run the application with a single command `make all`
+5. Alternatively, you can build and run the program with a single command `make all`.
 
-## ❓ How does it work?
+
+## `❓ How does it work?`
 
 First, we need to understand the rules.
 
@@ -31,6 +33,48 @@ First, we need to understand the rules.
    - Security fee: Rp 1,000/m²
    - Cleaning fee: Rp 800/m²
 
-The system maintains two monitoring systems. Only the most recent values are recorded:
-   - Property Value Monitor
-   - Maintenance Fee Calculator
+These are the formulas that will be used to calculate the property value.
+
+![Calculation Formulas](public/formulas.png)
+
+### `📥 Input`
+
+```
+2024-01-15T10:00:00 RESIDENTIAL 150.5 2020 PREMIUM YES 2 POOL,GYM
+2024-01-15T10:01:00 COMMERCIAL 200.0 2018 STANDARD NO 3 PARKING
+2024-01-15T10:02:00 RESIDENTIAL 180.0 2022 PREMIUM CORNER 1 POOL
+```
+
+- Each line contains: timestamp type area_m2 build_year location corner parking facilities
+- Timestamp format: YYYY-MM-DDThh:mm:ss
+- Type: RESIDENTIAL or COMMERCIAL
+- Area: float with 1 decimal (Max: 1000.0)
+- Build year: YYYY format (1900-2024)
+- Location: PREMIUM or STANDARD
+- Corner: YES/NO/CORNER
+- Parking: integer (0-99)
+- Facilities: comma-separated list (POOL,GYM,PARKING)
+
+Error occurs under the following conditions:
+- Input not following format: YYYY-MM-DDThh:mm:ss TYPE area_m2 year LOCATION CORNER parking FACILITIES
+- Blank line
+- Non-sequential timestamps
+- Gap between records exceeds 5 minutes
+- Less than 2 lines of data
+- Invalid property type
+- Area less than or equal to 0
+- Build year before 1900 or future year
+- Invalid location type
+- Invalid corner specification
+- Negative parking units
+- Invalid or duplicate facilities
+
+### `📤 Output`
+Program will display total property value and monthly maintenance, then all property records ordered by value per square meter from highest to lowest.
+```
+Property Value: Rp 2,500,000,000
+Monthly Maintenance: Rp 1,750,000
+2024-01-15T10:00:00 RESIDENTIAL 150.5 2020 PREMIUM YES 16,610,631/m²
+2024-01-15T10:02:00 RESIDENTIAL 180.0 2022 PREMIUM CORNER 15,850,000/m²
+2024-01-15T10:01:00 COMMERCIAL 200.0 2018 STANDARD NO 12,750,000/m²
+```
