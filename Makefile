@@ -1,12 +1,28 @@
-all: build run
+BINARY_NAME=thrivepropcalc
+SOURCE_DIR=cmd
+INPUT_FILE=input.txt
+DOCKER_IMAGE=thrivepropcalc
+
+all: build
 
 build:
-	go build -o bin/thrivepropcalc cmd/main.go
+	@echo "Building the Go application..."
+	go build -o bin/$(BINARY_NAME) $(SOURCE_DIR)/main.go
 
-run:
-	./bin/thrivepropcalc
+run: build
+	@echo "Running the Go application..."
+	./bin/$(BINARY_NAME)
 
 clean:
-	rm -rf bin/thrivepropcalc
+	@echo "Cleaning up..."
+	rm -f bin/$(BINARY_NAME)
 
-.PHONY: all build run clean
+docker-build:
+	@echo "Building Docker image..."
+	docker build -t $(DOCKER_IMAGE) .
+
+docker-run:
+	@echo "Running Docker container..."
+	docker run --rm $(DOCKER_IMAGE)
+
+.PHONY: all build run clean test docker-build docker-run

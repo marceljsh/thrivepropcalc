@@ -70,7 +70,7 @@ func validateInput(line string, lastTime *time.Time) error {
 	}
 	*lastTime = currentTime
 
-	if fields[1] != "RESIDENTIAL" && fields[1] != "COMMERCIAL" {
+	if _, ok := deppreciationRates[fields[1]]; !ok {
 		return errors.New("invalid property type")
 	}
 
