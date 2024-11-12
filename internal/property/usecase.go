@@ -2,8 +2,11 @@ package property
 
 import (
 	"errors"
+	"fmt"
 	"sort"
 	"time"
+
+	"github.com/marceljsh/thrivepropcalc/pkg/formatter"
 )
 
 func ProcessRecords(records []string) error {
@@ -48,4 +51,16 @@ func calculateProperties(properties []Property) (float64, float64) {
 	})
 
 	return totalValue, totalMaintenance
+}
+
+func displayResults(totalValue float64, maintenance float64, properties []Property) {
+	fmt.Printf("Property Value: Rp %s\n", formatter.FormatInteger(int(totalValue)))
+	fmt.Printf("Monthly Maintenance: Rp %s\n", formatter.FormatInteger(int(maintenance)))
+
+	for _, prop := range properties {
+		valPerM2 := int(prop.Value / prop.Area)
+		fmt.Printf("%s %s %.1f %d %s %s %s/m²\n",
+			prop.Timestamp, prop.Type, prop.Area, prop.BuildYear, prop.Location,
+			prop.Corner, formatter.FormatInteger(valPerM2))
+	}
 }
