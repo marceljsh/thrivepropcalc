@@ -41,10 +41,10 @@ func (p *Property) CalculateValue(currentYear int) {
 
 	/* location bonuses */
 	if p.Location == "PREMIUM" {
-		propertyValue *= 1.2
+		propertyValue *= 1 + premiumBonus
 	}
 	if p.Corner == "CORNER" || p.Corner == "YES" {
-		propertyValue *= 1.15
+		propertyValue *= 1 + cornerBonus
 	}
 
 	p.Value = propertyValue
