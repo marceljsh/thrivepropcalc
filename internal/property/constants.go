@@ -1,25 +1,30 @@
 package property
 
 const (
-	// property location
-	standardValuePerM2 = 10_000_000
-	premiumValuePerM2  = 15_000_000
+	appreciationRate = .05
 
-	// appreciation and depreciation rates
-	appreciationRate        = .05
-	residentialDepreciation = .025
-	commercialDepreciation  = .035
-
-	// location bonus rates
 	premiumBonus = .2
 	cornerBonus  = .15
 
-	// maintenance fees
-	residentialBaseFee = 2_500
-	commercialBaseFee  = 3_500
-	securityFee        = 1_000
-	cleaningFee        = 800
+	securityFee = 1_000
+	cleaningFee = 800
 
-	// layout
 	timestampLayout = "2006-01-02T15:04:05"
+)
+
+var (
+	baseValues = map[string]int{
+		"STANDARD": 10_000_000,
+		"PREMIUM":  15_000_000,
+	}
+
+	deppreciationRates = map[string]float64{
+		"RESIDENTIAL": .025,
+		"COMMERCIAL":  .035,
+	}
+
+	baseFees = map[string]int{
+		"RESIDENTIAL": 2_500,
+		"COMMERCIAL":  3_500,
+	}
 )
