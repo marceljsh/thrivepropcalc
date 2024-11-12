@@ -16,46 +16,28 @@ type Property struct {
 }
 
 func (p *Property) CalculateValue(currentYear int) {
-	/* base property value */
-	baseValue := 0.0
-	if p.Location == "PREMIUM" {
-		baseValue = premiumValuePerM2 * p.Area
-	} else {
-		baseValue = standardValuePerM2 * p.Area
-	}
-
-	/* annual value adjustments */
 	age := currentYear - p.BuildYear
+
+	baseValue := p.Area * float64(baseValues[p.Location])
 
 	landApprFactor := math.Pow(1+appreciationRate, float64(age))
 
-	var depreciationRate float64
-	if p.Type == "RESIDENTIAL" {
-		depreciationRate = residentialDepreciation
-	} else {
-		depreciationRate = commercialDepreciation
-	}
+	depreciationRate := deppreciationRates[p.Type]
 	buildingDeprFactor := math.Pow(1-depreciationRate, float64(age))
 
 	propertyValue := baseValue * landApprFactor * buildingDeprFactor
 
-	/* location bonuses */
 	if p.Location == "PREMIUM" {
 		propertyValue *= 1 + premiumBonus
 	}
+
 	if p.Corner == "CORNER" || p.Corner == "YES" {
 		propertyValue *= 1 + cornerBonus
 	}
 
 	p.Value = propertyValue
 
-	/* monthly maintenance */
-	var baseMaintenance float64
-	if p.Type == "RESIDENTIAL" {
-		baseMaintenance = residentialBaseFee * p.Area
-	} else {
-		baseMaintenance = commercialBaseFee * p.Area
-	}
+	baseMaintenance := baseFees[p.Type]
 
-	p.Maintenance = baseMaintenance + (securityFee * p.Area) + (cleaningFee * p.Area)
+	p.Maintenance = float64(baseMaintenance) + (securityFee * p.Area) + (cleaningFee * p.Area)
 }
