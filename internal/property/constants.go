@@ -3,9 +3,6 @@ package property
 const (
 	appreciationRate = .05
 
-	premiumBonus = .2
-	cornerBonus  = .15
-
 	securityFee = 1_000
 	cleaningFee = 800
 
@@ -26,5 +23,16 @@ var (
 	baseFees = map[string]int{
 		"RESIDENTIAL": 2_500,
 		"COMMERCIAL":  3_500,
+	}
+
+	locationBonuses = map[string]float64{
+		"PREMIUM":  .2,
+		"STANDARD": .0,
+	}
+
+	cornerBonuses = map[string]float64{
+		"CORNER": .15,
+		"YES":    .15,
+		"NO":     .0,
 	}
 )
