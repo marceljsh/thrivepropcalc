@@ -9,33 +9,6 @@ import (
 	"github.com/marceljsh/thrivepropcalc/pkg/formatter"
 )
 
-func ProcessRecords(records []string) error {
-	if len(records) < 2 {
-		return errors.New("input is less than 2 lines of data")
-	}
-
-	var properties []Property
-	var lastTime time.Time
-
-	for _, record := range records {
-		if err := validateInput(record, &lastTime); err != nil {
-			return err
-		}
-
-		property, err := parseProperty(record)
-		if err != nil {
-			return err
-		}
-		properties = append(properties, property)
-	}
-
-	totalValue, maintenance := CalculateProperties(properties)
-
-	displayResults(totalValue, maintenance, properties)
-
-	return nil
-}
-
 func validateInput(line string, lastTime *time.Time) error {
 	fields := strings.Fields(line)
 	if len(fields) != 8 {
