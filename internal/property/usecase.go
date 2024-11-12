@@ -84,16 +84,16 @@ func validateInput(line string, lastTime *time.Time) error {
 		return errors.New("invalid build year")
 	}
 
-	if fields[4] != "STANDARD" && fields[4] != "PREMIUM" {
+	if _, ok := baseValues[fields[4]]; !ok {
 		return errors.New("invalid location type")
 	}
 
-	if fields[5] != "YES" && fields[5] != "NO" && fields[5] != "CORNER" {
+	if _, ok := cornerBonuses[fields[5]]; !ok {
 		return errors.New("invalid corner specification")
 	}
 
 	var parking int
-	if _, err := fmt.Sscan(fields[6], &parking); parking < 0 || err != nil {
+	if _, err := fmt.Sscan(fields[6], &parking); parking < 0 || parking > 99 || err != nil {
 		return errors.New("parking units must be non-negative")
 	}
 
