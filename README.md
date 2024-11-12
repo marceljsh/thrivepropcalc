@@ -37,6 +37,11 @@ These are the formulas that will be used to calculate the property value.
 
 ![Calculation Formulas](public/formulas.png)
 
+- `V` is the property's value.
+- `Appr_land` and `R_land` are the land appreciation factor and rate, respectively.
+- `Depr_land` and `R_building` are the building depreciation factor and rate, respectively.
+- `Rate_premium` and `Rate_corner` (it should be `R_premium` and `R_corner`, i made a mistake lmao) are the rates of premium bonus and corner bonus, respectively.
+
 ### `📥 Input`
 
 ```
