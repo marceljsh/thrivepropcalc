@@ -1,9 +1,22 @@
-FROM golang:latest
+FROM golang:1.20 AS builder
 
 WORKDIR /app
 
-COPY cmd/main.go .
+COPY go.mod go.sum ./
 
-RUN go build -o /app/bin/thrivepropcalc main.go
+RUN go mod download
 
-ENTRYPOINT ["/app/bin/thrivepropcalc"]
+COPY . .
+
+RUN go build -o /bin/thrivepropcalc ./cmd/main.go
+
+FROM alpine:latest
+
+WORKDIR /root/
+
+COPY --from=builder /bin/thrivepropcalc .
+
+COPY input.txt ./
+COPY public/ ./public/
+
+CMD ["./thrivepropcalc"]
